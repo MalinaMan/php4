@@ -2,7 +2,7 @@ parameters:
     database_user: 'root'
     database_name: 'news'
     database_host: 'localhost'
-    database_password: ~
+    database_password: soccer
     uploads_dir: 'uploads'
     noreply_email: 'noreply@news.com.ua'
     some_api_key: '5sdf7hsf5s76f5hs7d5f'

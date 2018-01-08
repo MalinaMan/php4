@@ -23,7 +23,8 @@ class AppExtension extends \Twig_Extension
             new \Twig_SimpleFunction('get_cur_category_id', [$this, 'getCurrentCategoryId']),
             new \Twig_SimpleFunction('get_cur_page', [$this, 'getCurrentPage']),
             new \Twig_SimpleFunction('get_category_name_by_id', [$this, 'getCategoryNameById']),
-            new \Twig_SimpleFunction('get_max_count_pages_by_cur_category', [$this, 'getMaxCountPagesByCurCategory'])
+            new \Twig_SimpleFunction('get_max_count_pages_by_cur_category', [$this, 'getMaxCountPagesByCurCategory']),
+            new \Twig_SimpleFunction('get_max_count_pages_by_cur_tag', [$this, 'getMaxCountPagesByCurTag'])
         );
     }
     
@@ -73,7 +74,7 @@ class AppExtension extends \Twig_Extension
         ;
     }
 
-    public function getMaxCountPagesByCurCategory($category_id=null)
+    public function getMaxCountPagesByCurCategory($category_id = null)
     {
         if (!$category_id) {
             $category_id = $this->getCurrentCategoryId();
@@ -83,6 +84,15 @@ class AppExtension extends \Twig_Extension
             ->repositoryFactory
             ->createRepository('News')
             ->getMaxCountPagesByCategory($category_id)
+        ;
+    }
+
+    public function getMaxCountPagesByCurTag($tag_id)
+    {
+        return $this
+            ->repositoryFactory
+            ->createRepository('News')
+            ->getMaxCountPagesByTag($tag_id)
         ;
     }
 

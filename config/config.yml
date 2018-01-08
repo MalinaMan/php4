@@ -19,10 +19,6 @@ routing:
         pattern: /
         controller: DefaultController
         action: indexAction
-    books_list:
-        pattern: /books
-        controller: BookController
-        action: indexAction
     news_list:
         pattern: /news_list/{category_id}
         controller: NewsController
@@ -32,10 +28,10 @@ routing:
     news_by_tag_list:
         pattern: /news_tag_list/{tag_id}
         controller: NewsController
-        action: indexActionTag
+        action: listAction
         parameters:
             tag_id: '[0-9]+'
-    news:
+    news_item:
         pattern: /news/{id}
         controller: NewsController
         action: showAction
@@ -53,16 +49,7 @@ routing:
         pattern: /sign-in
         controller: SecurityController
         action: loginAction
-    
-    book_item:
-        pattern: /book/{id}
-        controller: BookController
-        action: showAction
-        parameters: 
-            id: '[0-9]+'
-            
-    
-            
+
     admin_homepage:
         pattern: /admin
         controller: Admin\DefaultController

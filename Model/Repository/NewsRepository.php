@@ -15,12 +15,12 @@ class NewsRepository
         return $this;
     }
 
-    public function findTop5NewsByCategory($id, $page=1)
+    private function findNewsByQuery($query, $id, $page)
     {
         $pdo = $this->pdo;
         
         $collection = [];
-        $sth = $pdo->prepare('SELECT id, title FROM news WHERE category_id = :id ORDER BY created DESC LIMIT ' . (($page-1)*5) . ',' . 5);
+        $sth = $pdo->prepare($query . ' LIMIT ' . (($page-1)*5) . ',' . 5);
         $sth->execute(['id' => $id]);
         
         while ($data = $sth->fetch(\PDO::FETCH_ASSOC)) {
@@ -33,6 +33,16 @@ class NewsRepository
         return $collection;
     }
 
+    public function findTop5NewsByCategory($id, $page=1)
+    {
+        return $this->findNewsByQuery('SELECT id, title FROM news WHERE category_id = :id ORDER BY created DESC', $id, $page);
+    }
+
+    public function findByTag($id, $page=1)
+    {
+        return $this->findNewsByQuery('SELECT news.id, news.title FROM news_tags AS nt INNER JOIN news ON nt.news_id = news.id WHERE nt.tag_id = :id ORDER BY news.created DESC', $id, $page);
+    }
+
     public function findTop5NewsWithPhoto()
     {
         $pdo = $this->pdo;
@@ -41,11 +51,25 @@ class NewsRepository
         return $sth->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+
+
     public function getMaxCountPagesByCategory($id)
     {
         $pdo = $this->pdo;
         
-        $sth = $pdo->prepare('SELECT COUNT(*) AS countRec FROM `news` WHERE category_id = :id');
+        $sth = $pdo->prepare('SELECT COUNT(*) AS countRec FROM news WHERE category_id = :id');
+        $sth->execute(['id' => $id]);
+
+        if ($data = $sth->fetch(\PDO::FETCH_ASSOC)) {
+            return ((int) (($data['countRec']- 1) / 5)) + 1;
+        }
+    }
+
+    public function getMaxCountPagesByTag($id)
+    {
+        $pdo = $this->pdo;
+        
+        $sth = $pdo->prepare('SELECT COUNT(*) AS countRec FROM news INNER JOIN news_tags AS nt ON news.id = nt.news_id AND nt.tag_id = :id');
         $sth->execute(['id' => $id]);
 
         if ($data = $sth->fetch(\PDO::FETCH_ASSOC)) {

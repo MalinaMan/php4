@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="Malinovskiy Nick" content="">
+
+    <title>News (modular work #4)</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/subscribe.js"></script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+      <a class="navbar-brand" href="#">NEWS</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/books">Books</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/index.php?controller=default&action=feedback">Contact us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown15" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown15">
+              <li><a class="dropdown-item" href="#">Photo galleries</a></li>
+              <li><a class="dropdown-item" href="#">Scores</a></li>
+              <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#" id="dropdown15sub">Weather</a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown15sub">
+                  <li><a class="dropdown-item" href="#">Kyiv</a></li>
+                  <li><a class="dropdown-item" href="#">Rome</a></li>
+                  <li><a class="dropdown-item" href="#">London</a></li>
+                  <li><a class="dropdown-item" href="#">Paris</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/index.php?controller=security&action=login">Sign in</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        
+        <div class="hidden-sm-down col-md-1 col-lg-1 banner">
+          <h6>banner #1</h6>
+          <h6>banner #2</h6>
+          <h6>banner #3</h6>
+          <h6>banner #4</h6>
+        </div>
+        
+        {% block content %}{% endblock %}
+
+        <div class="hidden-sm-down col-md-1 col-lg-1 banner">
+          <h6>banner #1</h6>
+          <h6>banner #2</h6>
+          <h6>banner #3</h6>
+          <h6>banner #4</h6>
+        </div>
+      </div>
+    </div>
+
+    <div id="subscribeModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>Subscribe to newsletter</h4>
+        <form action="/subscribe" method="post" class="subscribe" id="subscribe-form">
+            <input type="email" class="form-control" name="email" placeholder="Enter your email" required /> <br/>
+            <input type="text" class="form-control" name="name" placeholder="Enter your name" required/> <br/>
+            <input type="text" class="form-control" name="lastname" placeholder="Enter your lastname"/> <br/>
+            <button class="btn btn-md btn-primary btn-block" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    {% block javascripts %}{% endblock %}
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="/js/tether.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/close.js"></script>
+  </body>
+</html>

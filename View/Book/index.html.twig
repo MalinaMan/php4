@@ -1,0 +1,104 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+<div class='col-md-4' style='display: none' id='js-book-element-tpl'>
+    <div class="card" style="height: 200px; margin-top: 10px">
+      <div class="card-body">
+        <h4 class="card-title js-book-title"></h4>
+        <p class="card-text js-book-price"></p>
+        <a href="#" class="btn btn-primary">Add to cart</a>
+        <a href="/book/" class="btn btn-success js-book-details">Details</a>
+      </div>
+    </div>
+</div>
+
+<div style="margin:0 auto; background: url('/img/lg.puppy-dog-ajax-spinner.gif'); width: 200px; height: 200px; background-size: 200px 200px; display: none" id="spinner"></div>
+
+<div class='row book-wrapper' data-page='1'>
+    
+</div>
+
+<button class="btn btn-primary btn-lg" id='js-load-more'>Load more books</button>
+
+
+<script>
+    $(document).ready(function($) {
+        var $spinner = $('#spinner');
+        var $bookWrapper = $('.book-wrapper');
+        var page = $bookWrapper.data('page');
+        var $loadMoreBtn = $('#js-load-more');
+        
+        $spinner.show();
+        
+        
+        // function doGetRequest(url) {
+        //     return $.ajax({
+        //         'url': url,
+        //         'type': 'GET'
+        //     });
+        // }
+        
+        // doGetRequest('/api/books').then(function(r) {
+        //     console.log('success', r);
+        // }, function(r) {
+        //     console.log('fail', r);
+        // });
+        
+
+        function loadBooks(page) {
+            $.get('/api/books?page=' + page)
+                .done(function(r) {
+                    console.log('success', r);
+                    $spinner.hide();
+                    var $tplElement = $('#js-book-element-tpl');
+                    var book;
+                    var $bookElement;
+                    var $details;
+                    
+                    for (var key in r) {
+                        book = r[key];
+                        $bookElement = $tplElement.clone();
+                        $bookElement.removeAttr('id');
+                        $bookElement.find('.js-book-title').text(book.title);
+                        $bookElement.find('.js-book-price').text(book.price);
+                        
+                        $details = $bookElement.find('.js-book-details');
+                        $details.attr('href', $details.attr('href') + book.id);
+                        console.log($bookElement);
+                        
+                        $bookElement.show().appendTo($bookWrapper);
+                    }
+                    
+                    page++;
+                    $bookWrapper.data('page', page);
+                    console.log('next page ', page);
+                })
+                .fail(function(r) {
+                    console.log('fail', r);
+                })
+                .always(function(r) {
+                    
+                    console.log('always', r);
+                })
+            ;
+        }
+        
+        
+        
+        loadBooks(page);
+        
+        $loadMoreBtn.on('click', function() {
+            console.log('click');
+            $spinner.show().appendTo($bookWrapper);
+            loadBooks($bookWrapper.data('page'));
+        });
+
+        
+        
+        
+        
+    });
+</script>
+
+{% endblock %}

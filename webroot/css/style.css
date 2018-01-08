@@ -1,0 +1,143 @@
+body {
+  padding-top: 5rem;
+}
+
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.flash-box:empty {
+  display: none;
+}
+
+.form-container {
+  max-width:960px;
+}
+
+.banner {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  -webkit-border-radius: 0 6px 6px 6px;
+  -moz-border-radius: 0 6px 6px;
+  border-radius: 0 6px 6px 6px;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto 20%; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 45%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.category_title {
+  font-size: 13px;
+}
+
+.list_news {
+  line-height: 1;
+  padding-left: 5px;
+}
+
+.list_news>li {
+  padding-top: 5px;
+}
+
+.carousel-inner img {
+  width: 100%;
+  max-width: 331px;
+  height: 200px;
+}
+
+.carousel-caption p {
+  font-size: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.category_color {
+  color: green;
+}
+
+.news_by_page {
+  min-height: 170px;
+}
+
+.pagination .dropdown-toggle::after {
+  display:none
+}
+
+.pagination .dropdown-menu {
+  min-width: 0;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+}
+
+hr {
+    height: 1px;
+    width: 96%;
+}
+
+.link_without_decor,
+.link_without_decor:visited,
+.list_news a,
+.list_news a:visited,
+.news_by_page a,
+.news_by_page a:visited,
+.carousel-caption a,
+.carousel-caption a:visited {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.link_without_decor:hover,
+.list_news a:hover,
+.news_by_page a:hover {
+  color: darkred;
+}
+
+.carousel-caption a:hover {
+  color: white;
+}

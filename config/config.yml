@@ -1,0 +1,86 @@
+parameters:
+    database_user: 'root'
+    database_name: 'news'
+    database_host: 'localhost'
+    database_password: ~
+    uploads_dir: 'uploads'
+    noreply_email: 'noreply@news.com.ua'
+    some_api_key: '5sdf7hsf5s76f5hs7d5f'
+
+routing:
+    test_route:
+        pattern: /test/{one}/bar/{two}
+        controller: TestController
+        action: testAction
+        parameters:
+            one: '[0-9]+'
+            two: '[a-z]+'
+    homepage:
+        pattern: /
+        controller: DefaultController
+        action: indexAction
+    books_list:
+        pattern: /books
+        controller: BookController
+        action: indexAction
+    news_list:
+        pattern: /news_list/{category_id}
+        controller: NewsController
+        action: indexAction
+        parameters:
+            category_id: '[0-9]+'
+    news_by_tag_list:
+        pattern: /news_tag_list/{tag_id}
+        controller: NewsController
+        action: indexActionTag
+        parameters:
+            tag_id: '[0-9]+'
+    news:
+        pattern: /news/{id}
+        controller: NewsController
+        action: showAction
+        parameters: 
+            id: '[0-9]+'
+    feedback:
+        pattern: /feedback
+        controller: DefaultController
+        action: feedbackAction
+    subscribe:
+        pattern: /subscribe
+        controller: DefaultController
+        action: subscribeAction
+    sign_in:
+        pattern: /sign-in
+        controller: SecurityController
+        action: loginAction
+    
+    book_item:
+        pattern: /book/{id}
+        controller: BookController
+        action: showAction
+        parameters: 
+            id: '[0-9]+'
+            
+    
+            
+    admin_homepage:
+        pattern: /admin
+        controller: Admin\DefaultController
+        action: indexAction
+
+    api_session:
+        pattern: /api/session/{key}
+        controller: API\SessionController
+        action: getSessionValue
+        parameters: 
+            key: '[a-z_]+'
+
+    api_statistic:
+        pattern: /api/news_view/{news_id}
+        controller: API\NewsController
+        action: getQuantityViewNews
+        parameters: 
+            news_id: '[0-9]+'
+    
+# GET, PUT, PATCH, DELETE /books/3
+# GET, POST /books 

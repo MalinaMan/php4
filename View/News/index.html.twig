@@ -1,0 +1,46 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <div class='col'>
+        {% set currentCategoryId = get_cur_category_id() %}
+        <div class="row category_color">
+            <h4>{{ get_category_name_by_id(currentCategoryId) }}</h4>
+        </div>
+        <div class="row news_by_page link_without_decor">
+            <ul>
+                {% for news in get_top5_news_by_cur_category(currentCategoryId) %}
+                    <li><a href="/news/{{news.id}}">{{ news.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="row">
+            <ul class="pagination">
+                {% set curPage = get_cur_page() %}
+                {% set maxPages = get_max_count_pages_by_cur_category(currentCategoryId) %}
+
+                <li class="page-item{% if curPage==1 %} disabled{% endif %}"><a class="page-link" href="/news_list/{{ currentCategoryId }}?page={{curPage-1}}">Previous</a></li>
+
+                <li class="page-item{% if curPage==1 %} active{% endif %}"><a class="page-link" href="/news_list/{{ currentCategoryId }}?page=1">1</a></li>
+
+                {% if maxPages > 2 %}
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle rounded-0{% if curPage>1 and curPage<maxPages %} btn-primary active{% else %} btn-secondary{% endif %}" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {% if curPage>1 and curPage<maxPages %}aria-pressed="true"{% endif %}>...</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            {% for i in range(2, maxPages-1) %}
+                                <a class="dropdown-item{% if curPage==i %} active{% endif %}" href="/news_list/{{ currentCategoryId }}?page={{ i }}">{{ i }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if maxPages > 1 %}
+                    <li class="page-item{% if curPage==maxPages %} active{% endif %}"><a class="page-link" href="/news_list/{{ currentCategoryId }}?page={{ maxPages }}">{{ maxPages }}</a></li>
+                {% endif %}
+
+                <li class="page-item{% if curPage==maxPages %} disabled{% endif %}"><a class="page-link" href="/news_list/{{ currentCategoryId }}?page={{curPage+1}}">Next</a></li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

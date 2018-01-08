@@ -1,0 +1,58 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+        <div class='col-xs-8 col-sm-8 col-md-7 col-lg-7'>
+          <div class="row alert-warning flash-box">
+            {{ get_flash_message() }}
+          </div>
+          <div class="row category_title">
+            {% for category in global_categories %}
+              <div class="col">
+                <a href="/news_list/{{ category.id }}"><b>{{ category.name }}</b></a>
+                <ul class="list_news">
+                  {% for news in get_top5_news_by_cur_category(category.id) %}
+                    <li><a href="/news/{{ news.id }}"><small>{{ news.title }}</small></a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        
+        <div class='col-xs-4 col-sm-4 col-md-3 col-lg-3 top'>
+          <div class="row">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+              </ol>
+
+              <div class="carousel-inner" role="listbox">
+                {% for news in get_top5_news_with_photo() %}
+                  <div class="carousel-item{% if loop.first %} active{% endif %}">
+                    <img class="d-block img-fluid" src="/img/{{ news.filename }}" alt="{{ news.title }}">
+                    <div class="carousel-caption d-none d-md-block">
+                      <p><a href="/news/{{ news.id }}">{{ news.title }}</a></p>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+
+              <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+{% endblock %}

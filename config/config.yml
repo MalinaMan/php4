@@ -37,10 +37,6 @@ routing:
         action: showAction
         parameters: 
             id: '[0-9]+'
-    feedback:
-        pattern: /feedback
-        controller: DefaultController
-        action: feedbackAction
     subscribe:
         pattern: /subscribe
         controller: DefaultController

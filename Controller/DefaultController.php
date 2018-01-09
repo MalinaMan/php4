@@ -43,39 +43,5 @@ class DefaultController extends Controller
 
         return $this->render('index.html.twig');
     }
-    
-    public function feedbackAction(Request $request)
-    {
-        $form = new FeedbackForm(
-            $request->post('email'),  // $_POST['email']
-            $request->post('message')
-        );
-        
-        if ($request->isPost()) {
-            if ($form->isValid()) {
-                
-                $feedback = new Feedback(
-                    $form->email,
-                    $form->message
-                );
-                
-                FeedbackRepository::save($feedback);
-                // $repo->save
-                
-                Session::setFlash('Saved');
-                
-                $this
-                    ->container
-                    ->get('router')
-                    ->redirect('/index.php?controller=default&action=feedback')
-                ;
-                
-            }
-            
-            Session::setFlash('Invalid form');
-        }
-            
-        return $this->render('feedback.phtml', ['form' => $form]);
-    }
 
 }

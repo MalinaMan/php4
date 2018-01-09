@@ -53,4 +53,31 @@ class NewsController extends Controller
             'news' => $news
         ]);
     }
+
+    public function searchByTagAction(Request $request)
+    {
+
+        $tag_name = $request->get('inputTagField');
+        if ($tag_name) {
+            $factory = $this
+                ->container
+                ->get('repository_factory');
+
+            $tag = $factory
+                ->createRepository('Tag')
+                ->findByName($tag_name);
+            
+            $currentPage = 1;
+            $news_list = $factory
+                    ->createRepository('News')
+                    ->findByTag($tag->getId(), $currentPage);
+
+            return $this->render('list.html.twig', [
+                'tag' => $tag,
+                'news_list' => $news_list
+            ]);
+        }
+
+        return $this->render('index.html.twig');
+    }
 }

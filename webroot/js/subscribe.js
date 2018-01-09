@@ -2,7 +2,8 @@ $(function ()
 {
 
 	var time = 0, duration = 1000, delay = 15, disabled = false, clockTime = null;
-	var urlAPI_timer = "/api/session/timer_subscribe";
+	var urlAPI_timer = "/api/session/timer_subscribe",
+		urlAPI_timer_off = "/api/session_set/timer_subscribe_success";
 
 	function startCheck()
 	{
@@ -47,6 +48,11 @@ $(function ()
 		
 		$('.close').on("click", function() {
 			modal.css('display', 'none');
+			$.ajax({
+			  method: "POST",
+			  url: urlAPI_timer_off,
+			  data: {value: "1"}
+			});
 		});
 
 		window.onclick = function(event) {

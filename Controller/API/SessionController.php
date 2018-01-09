@@ -17,4 +17,13 @@ class SessionController extends Controller
         header('Content-type: application/json');
         return json_encode($value);
     }
+
+    public function setSessionValue(Request $request)
+    {
+        $key = $request->get('key');
+        $value = Session::set($key, $request->post('value'));
+
+        header('Content-type: application/json');
+        return json_encode('OK');
+    }
 }

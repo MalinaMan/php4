@@ -39,7 +39,7 @@ class Router
     
     public function match(Request $request)
     {
-        $uri = $request->getUri();
+        $uri = urldecode($request->getUri());
         $routes = $this->routes;
 
         foreach ($routes as $route) {
@@ -56,7 +56,7 @@ class Router
             }
             
             $pattern = '@^' . $pattern . '$@';
-            
+
             if (preg_match($pattern, $uri, $matches)) {
                 // remove match by whole regexp
                 array_shift($matches);

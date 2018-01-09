@@ -46,7 +46,7 @@ try {
     $router = new \Framework\Router($routing);
     $router->match($request);
     $router->setCurrentParameters($request);
-    
+
     // create objects for container
     $repositoryFactory = new \Framework\RepositoryFactory();
     $repositoryFactory->setPdo($pdo)

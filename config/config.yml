@@ -37,6 +37,10 @@ routing:
         action: showAction
         parameters: 
             id: '[0-9]+'
+    search_by_tag:
+        pattern: /search_by_tag
+        controller: NewsController
+        action: searchByTagAction
     subscribe:
         pattern: /subscribe
         controller: DefaultController
@@ -51,19 +55,30 @@ routing:
         controller: Admin\DefaultController
         action: indexAction
 
-    api_session:
+    api_session_get:
         pattern: /api/session/{key}
         controller: API\SessionController
         action: getSessionValue
         parameters: 
             key: '[a-z_]+'
-
+    api_session_set:
+        pattern: /api/session_set/{key}
+        controller: API\SessionController
+        action: setSessionValue
+        parameters: 
+            key: '[a-z_]+'
     api_statistic:
         pattern: /api/news_view/{news_id}
         controller: API\NewsController
         action: getQuantityViewNews
         parameters: 
             news_id: '[0-9]+'
+    api_search_tag:
+        pattern: /api/search_tag/{needle}
+        controller: API\TagController
+        action: getTagsBySubstring
+        parameters: 
+            needle: '[0-9A-Za-zА-Яа-яр-т ]+'
     
 # GET, PUT, PATCH, DELETE /books/3
 # GET, POST /books 

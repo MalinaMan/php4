@@ -31,4 +31,8 @@ $(function ()
 		}
 	);
 
+	$('#search-tag-form').on("submit", function () {
+		$(window).off('beforeunload');
+	});
+
 }());

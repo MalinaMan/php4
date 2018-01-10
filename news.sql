@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2018 at 03:37 PM
+-- Generation Time: Jan 09, 2018 at 11:41 PM
 -- Server version: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -126,7 +126,9 @@ INSERT INTO `news` (`id`, `title`, `category_id`, `description`, `analitic`, `cr
 (40, 'Nunc ultrices nisl pretium pharetra fringilla', 1, 'Proin semper quis nunc ut congue. Nullam urna lectus, cursus vitae mi id, aliquam facilisis nisl. Vestibulum quis fringilla nunc. Aenean egestas commodo sapien quis rhoncus. Phasellus fermentum tincidunt justo vitae pharetra. Donec interdum ligula et lacus faucibus, nec tempus lacus vulputate. Sed sodales lorem at massa rhoncus facilisis id sit amet mauris. Nullam faucibus sapien sed dui euismod finibus. Integer iaculis dictum augue, iaculis egestas est dapibus id. Aenean neque purus, ultricies eu imperdiet a, viverra vitae tellus.\r\n\r\nCras quam velit, convallis quis dictum nec, placerat ut purus. Nullam dignissim at nibh ac luctus. Maecenas eget justo non ipsum eleifend hendrerit. Phasellus at ipsum in elit tincidunt rhoncus at eu tortor. Proin elit neque, ullamcorper ut metus malesuada, pretium ornare ex. Nulla vitae dolor nibh. Cras rhoncus tortor vitae venenatis efficitur. Integer dictum nibh et iaculis auctor. Morbi sit amet lacinia leo, quis eleifend eros. Vivamus dignissim diam nec suscipit tempus. Fusce a eleifend nisl.', 0, '2018-01-06 08:18:40', 1),
 (41, 'Nulla ut ante id massa vehicula eleifend a nec tortor', 1, 'Proin semper quis nunc ut congue. Nullam urna lectus, cursus vitae mi id, aliquam facilisis nisl. Vestibulum quis fringilla nunc. Aenean egestas commodo sapien quis rhoncus. Phasellus fermentum tincidunt justo vitae pharetra. Donec interdum ligula et lacus faucibus, nec tempus lacus vulputate. Sed sodales lorem at massa rhoncus facilisis id sit amet mauris. Nullam faucibus sapien sed dui euismod finibus. Integer iaculis dictum augue, iaculis egestas est dapibus id. Aenean neque purus, ultricies eu imperdiet a, viverra vitae tellus.\r\n\r\nCras quam velit, convallis quis dictum nec, placerat ut purus. Nullam dignissim at nibh ac luctus. Maecenas eget justo non ipsum eleifend hendrerit. Phasellus at ipsum in elit tincidunt rhoncus at eu tortor. Proin elit neque, ullamcorper ut metus malesuada, pretium ornare ex. Nulla vitae dolor nibh. Cras rhoncus tortor vitae venenatis efficitur. Integer dictum nibh et iaculis auctor. Morbi sit amet lacinia leo, quis eleifend eros. Vivamus dignissim diam nec suscipit tempus. Fusce a eleifend nisl.', 0, '2018-01-06 08:19:50', 1),
 (42, 'Phasellus accumsan sem in aliquet maximus', 1, 'Proin semper quis nunc ut congue. Nullam urna lectus, cursus vitae mi id, aliquam facilisis nisl. Vestibulum quis fringilla nunc. Aenean egestas commodo sapien quis rhoncus. Phasellus fermentum tincidunt justo vitae pharetra. Donec interdum ligula et lacus faucibus, nec tempus lacus vulputate. Sed sodales lorem at massa rhoncus facilisis id sit amet mauris. Nullam faucibus sapien sed dui euismod finibus. Integer iaculis dictum augue, iaculis egestas est dapibus id. Aenean neque purus, ultricies eu imperdiet a, viverra vitae tellus.\r\n\r\nCras quam velit, convallis quis dictum nec, placerat ut purus. Nullam dignissim at nibh ac luctus. Maecenas eget justo non ipsum eleifend hendrerit. Phasellus at ipsum in elit tincidunt rhoncus at eu tortor. Proin elit neque, ullamcorper ut metus malesuada, pretium ornare ex. Nulla vitae dolor nibh. Cras rhoncus tortor vitae venenatis efficitur. Integer dictum nibh et iaculis auctor. Morbi sit amet lacinia leo, quis eleifend eros. Vivamus dignissim diam nec suscipit tempus. Fusce a eleifend nisl.', 0, '2018-01-06 08:19:59', 1),
-(43, 'Mauris eget nulla quis ante volutpat tincidunt', 1, 'Proin semper quis nunc ut congue. Nullam urna lectus, cursus vitae mi id, aliquam facilisis nisl. Vestibulum quis fringilla nunc. Aenean egestas commodo sapien quis rhoncus. Phasellus fermentum tincidunt justo vitae pharetra. Donec interdum ligula et lacus faucibus, nec tempus lacus vulputate. Sed sodales lorem at massa rhoncus facilisis id sit amet mauris. Nullam faucibus sapien sed dui euismod finibus. Integer iaculis dictum augue, iaculis egestas est dapibus id. Aenean neque purus, ultricies eu imperdiet a, viverra vitae tellus.\r\n\r\nCras quam velit, convallis quis dictum nec, placerat ut purus. Nullam dignissim at nibh ac luctus. Maecenas eget justo non ipsum eleifend hendrerit. Phasellus at ipsum in elit tincidunt rhoncus at eu tortor. Proin elit neque, ullamcorper ut metus malesuada, pretium ornare ex. Nulla vitae dolor nibh. Cras rhoncus tortor vitae venenatis efficitur. Integer dictum nibh et iaculis auctor. Morbi sit amet lacinia leo, quis eleifend eros. Vivamus dignissim diam nec suscipit tempus. Fusce a eleifend nisl.', 0, '2018-01-06 09:55:19', 1);
+(43, 'Mauris eget nulla quis ante volutpat tincidunt', 1, 'Proin semper quis nunc ut congue. Nullam urna lectus, cursus vitae mi id, aliquam facilisis nisl. Vestibulum quis fringilla nunc. Aenean egestas commodo sapien quis rhoncus. Phasellus fermentum tincidunt justo vitae pharetra. Donec interdum ligula et lacus faucibus, nec tempus lacus vulputate. Sed sodales lorem at massa rhoncus facilisis id sit amet mauris. Nullam faucibus sapien sed dui euismod finibus. Integer iaculis dictum augue, iaculis egestas est dapibus id. Aenean neque purus, ultricies eu imperdiet a, viverra vitae tellus.\r\n\r\nCras quam velit, convallis quis dictum nec, placerat ut purus. Nullam dignissim at nibh ac luctus. Maecenas eget justo non ipsum eleifend hendrerit. Phasellus at ipsum in elit tincidunt rhoncus at eu tortor. Proin elit neque, ullamcorper ut metus malesuada, pretium ornare ex. Nulla vitae dolor nibh. Cras rhoncus tortor vitae venenatis efficitur. Integer dictum nibh et iaculis auctor. Morbi sit amet lacinia leo, quis eleifend eros. Vivamus dignissim diam nec suscipit tempus. Fusce a eleifend nisl.', 0, '2018-01-06 09:55:19', 1),
+(44, 'Integer rhoncus justo id eleifend blandit', 5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eleifend hendrerit nibh, vitae condimentum purus porta efficitur. Mauris interdum vulputate tincidunt. Suspendisse lacinia tempus fermentum. Aenean vulputate elit at libero viverra, maximus commodo ligula viverra. Nam fringilla, lacus sed blandit rutrum, libero erat pretium nisl, ut faucibus neque odio vel leo. Ut facilisis felis non est ultricies vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac habitasse platea dictumst. Vivamus at nibh vel mauris pharetra scelerisque vitae vitae justo. In blandit metus at diam aliquam interdum.', 0, '2018-01-09 14:22:32', 1),
+(45, 'Nam porttitor turpis nec mauris auctor, sodales bibendum tellus aliquet', 7, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eleifend hendrerit nibh, vitae condimentum purus porta efficitur. Mauris interdum vulputate tincidunt. Suspendisse lacinia tempus fermentum. Aenean vulputate elit at libero viverra, maximus commodo ligula viverra. Nam fringilla, lacus sed blandit rutrum, libero erat pretium nisl, ut faucibus neque odio vel leo. Ut facilisis felis non est ultricies vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac habitasse platea dictumst. Vivamus at nibh vel mauris pharetra scelerisque vitae vitae justo. In blandit metus at diam aliquam interdum.', 0, '2018-01-09 14:23:19', 1);
 
 -- --------------------------------------------------------
 
@@ -212,7 +214,55 @@ INSERT INTO `news_tags` (`news_id`, `tag_id`) VALUES
 (20, 7),
 (20, 9),
 (20, 12),
-(20, 13);
+(20, 13),
+(21, 2),
+(21, 9),
+(22, 1),
+(22, 12),
+(23, 3),
+(23, 13),
+(24, 4),
+(24, 5),
+(25, 6),
+(25, 10),
+(26, 1),
+(26, 2),
+(27, 8),
+(27, 13),
+(28, 4),
+(28, 7),
+(29, 9),
+(30, 10),
+(30, 11),
+(31, 5),
+(31, 12),
+(32, 2),
+(33, 3),
+(33, 8),
+(33, 13),
+(34, 5),
+(34, 12),
+(35, 1),
+(35, 10),
+(36, 8),
+(37, 2),
+(37, 5),
+(38, 6),
+(38, 7),
+(39, 11),
+(39, 12),
+(40, 7),
+(40, 14),
+(41, 3),
+(41, 15),
+(42, 5),
+(43, 13),
+(43, 16),
+(44, 2),
+(44, 11),
+(44, 16),
+(45, 9),
+(45, 15);
 
 -- --------------------------------------------------------
 
@@ -230,8 +280,14 @@ CREATE TABLE `statistics` (
 --
 
 INSERT INTO `statistics` (`news_id`, `quantity`) VALUES
-(1, 5),
-(16, 39940);
+(1, 6),
+(2, 18),
+(4, 8),
+(16, 1190),
+(18, 3),
+(20, 30),
+(23, 9),
+(39, 133);
 
 -- --------------------------------------------------------
 
@@ -281,7 +337,10 @@ INSERT INTO `tags` (`id`, `name`) VALUES
 (10, 'ООН'),
 (11, 'Порошенко'),
 (12, 'Олимпиада'),
-(13, 'Космос');
+(13, 'Космос'),
+(14, 'Финансовые новости'),
+(15, 'Финансовые прогнозы'),
+(16, 'Экономика и финансы');
 
 -- --------------------------------------------------------
 
@@ -374,12 +433,12 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 --
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `users`
 --
